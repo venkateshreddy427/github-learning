@@ -11,6 +11,8 @@ jobs:
           
           - name: List files
             run: ls -lrth
+          - name: Current Working Directory 
+            run : pwd  
 
           - name: Read the file
             run: cat README.md     
