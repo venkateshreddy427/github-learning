@@ -8,14 +8,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repo
-          uses: actions/checkout@v4
+          uses: actions/checkout@4
+        
+        - name: Listing All Directories
+          run: ls -lrth  
           
-        - name: Listing Repo Files
-          run: ls -la
-
-        - name: Executing Shell Script
-          run: | 
+        - name: Install cowsay Program
+          run: |
             chmod +x ascii-shell-script.sh
             ./ascii-shell-script.sh
-          
           
