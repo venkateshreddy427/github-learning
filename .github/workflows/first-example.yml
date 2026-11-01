@@ -10,11 +10,19 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v4
 
-      - name: Welcome message
-        run: echo "Hello World"
+      - name: List and Read Files
+        run: |
+           echo "Hello World"
+           ls -lrth
+           cat /etc/os-release
+           ip addr
+           ifconfig
+           cat README.md
 
-      - name: List files
-        run: ls -lrth
+      - name: Generate ASCII Artwork 
+        run: cowsay -f dragon "Run for cover, I am a DRAGON.....RAWR"  >> dragon.txt     
+      # - name: List files
+      #   run: ls -lrth
 
-      - name: Read the file
-        run: cat README.md
+      # - name: Read the file
+      #   run: cat README.md
