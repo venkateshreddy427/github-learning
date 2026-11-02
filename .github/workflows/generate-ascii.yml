@@ -24,6 +24,7 @@ jobs:
     deploy_job_3: 
         needs: test_job_2
         runs-on: ubuntu-latest
+        steps:
         - name: Read File
           run: cat dragon.txt 
         - name: Test File Exists
