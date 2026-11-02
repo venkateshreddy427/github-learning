@@ -22,7 +22,7 @@ jobs:
         - name: Test File Exists
           run: grep -i "dragon" dragon.txt      
     deploy_job_3: 
-        needs: [test_job_2x]
+        needs: test_job_2
         runs-on: ubuntu-latest
         - name: Read File
           run: cat dragon.txt 
