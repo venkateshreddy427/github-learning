@@ -15,7 +15,7 @@ jobs:
           uses: actions/upload-artifact@v7
           with:
             name: dragon-test-file
-             path: dragon.txt 
+            path: dragon.txt 
     test_job_2:
         needs: build_job_1
         runs-on: ubuntu-latest
