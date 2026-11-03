@@ -10,7 +10,7 @@ jobs:
         - name: Install Cowsay Program 
           run: sudo apt-get install cowsay -y
         - name: Execute Cowsay CMD 
-          run: cowsay -f dragon "Run for cover, I am a GRAGON....DRWA" >> dragon.txt 
+          run: cowsay -f dragon "Run for cover, I am a DRAGON....DRWA" >> dragon.txt 
         - name: Upload Dragon TXT File
           uses: actions/upload-artifact@v7
           with:
@@ -24,6 +24,9 @@ jobs:
           uses: actions/download-artifact@v7
           with:
             name: dragon-test-file
+            path: .
+        - name: Debug File Location
+          run: ls -R
         - name: Test File Exists
           run: grep -i "dragon" dragon.txt      
     deploy_job_3: 
@@ -34,6 +37,7 @@ jobs:
           uses: actions/download-artifact@v7
           with:
             name: dragon-test-file    
+            path: .
         - name: Read File
           run: cat dragon.txt 
         - name: Test File Exists
