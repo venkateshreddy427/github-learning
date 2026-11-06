@@ -1,7 +1,8 @@
 name: Exploring Variables and Secrets
 
 on:
-  workflow_dispatch: # Allows manual triggering from the GitHub Actions UI
+  push
+  # workflow_dispatch: # Allows manual triggering from the GitHub Actions UI
 
 env:
   CONTAINER_REGISTRY: docker.io
