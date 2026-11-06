@@ -23,18 +23,15 @@ jobs:
     - name: Docker Publish
       run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
-  deploy: 
+  deploy:
     needs: docker
-    concurrency: 
+    concurrency:
       group: production-deployment
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    concurrency:
-       group: production-deployment
-       cancel-in-progress: true
-    steps: 
-      timeout-minutes: 1
-    - name: Docker Run 
-      run: |
-         echo docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-         sleep 600s  
+    steps:
+        timeout-minutes: 1
+      - name: Docker Run
+        run: |
+          echo "docker run -d -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest"
+          sleep 600s  
