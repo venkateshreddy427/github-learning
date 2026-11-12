@@ -9,7 +9,7 @@ on:
         #    - feature/*    # feature/add-music, feature/updateImages
         #    - test/**       # test/ui/index, test/checkout/payment/
         branches: 
-            - main: 
+            - main 
             - '!feature/*'   # ignore pushing to any branch name starting with feature using !        
     pull_request: 
         types: 
